@@ -24,3 +24,16 @@ config LED_PWM
     default y
 
 endif # ZMK_BACKLIGHT
+
+config ZMK_PM_SOFT_OFF
+    bool "Soft-off support"
+    depends on HAS_POWEROFF
+    select ZMK_PM
+    select PM_DEVICE
+    select ZMK_PM_DEVICE_SUSPEND_RESUME
+    select POWEROFF
+
+config ZMK_GPIO_KEY_WAKEUP_TRIGGER
+    bool "Hardware supported wakeup (GPIO)"
+    default y
+    depends on DT_HAS_ZMK_GPIO_KEY_WAKEUP_TRIGGER_ENABLED && ZMK_PM_SOFT_OFF
