@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define MACOS     0
 #define FKEYS     1
@@ -340,9 +341,29 @@
     combos {
         compatible = "zmk,combos";
 
-        winkey {
-            bindings = <&kp LEFT_WIN>;
-            key-positions = <38 39>;
+        reset-left {
+            bindings = <&bootloader>;
+            key-positions = <0 5 42>;
+        };
+
+        reset-right {
+            bindings = <&bootloader>;
+            key-positions = <6 43 11>;
+        };
+
+        copy {
+            bindings = <&kt LC(C)>;
+            key-positions = <26 27>;
+        };
+
+        paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <28 27>;
+        };
+
+        cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <25 27>;
         };
     };
 
@@ -353,10 +374,10 @@
             label = "default";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
-&kp TAB    &kp Q  &kp W     &kp E      &kp R  &kp T                               &kp Y      &kp U     &kp I      &kp O    &kp P     &kp BACKSPACE
-&kp ESC    &kp A  &kp S     &kp D      &kp F  &kp G                               &kp H      &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X     &kp C      &kp V  &kp B                 &to 6  &to 3  &kp N      &kp M     &kp COMMA  &kp DOT  &kp FSLH  &mt RSHFT ENTER
-                  &kp LALT  &kp LCTRL  &mo 2  &mt LEFT_SHIFT SPACE  &mo 1  &mo 3  &kp SPACE  &kp BSPC  &kp DEL    &none
+&kp TAB    &kp Q  &kp W              &kp E  &kp R      &kp T                               &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BACKSPACE
+&kp ESC    &kp A  &kp S              &kp D  &kp F      &kp G                               &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X              &kp C  &kp V      &kp B                 &to 6  &to 3  &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &mt RSHFT ENTER
+                  &mt LALT LEFT_WIN  &none  &kp LCTRL  &mt LEFT_SHIFT SPACE  &mo 1  &mo 3  &kp SPACE  &mo 2  &none      &none
             >;
         };
 
@@ -374,7 +395,7 @@
         Symbols {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &kp LEFT_BRACKET      &kp RBKT               &kp EQUAL  &kp DELETE
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &kp LEFT_BRACKET      &kp RBKT               &kp EQUAL  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans     &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                &trans
             >;
@@ -395,10 +416,10 @@
 
         Function {
             bindings = <
-&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &bt BT_NXT                  &trans  &trans  &kp HOME  &trans  &trans  &trans
-&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &bt BT_PRV                  &trans  &trans  &kp END   &trans  &trans  &trans
-&trans         &trans         &trans         &trans         &trans         &bt BT_CLR  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans
-                              &trans         &trans         &trans         &trans      &trans  &trans  &trans  &trans  &trans    &trans
+&bt BT_NXT  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4                   &trans  &trans  &kp HOME  &trans  &trans  &trans
+&bt BT_PRV  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &trans  &trans  &kp END   &trans  &trans  &trans
+&none       &trans         &trans         &trans         &trans         &none          &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans
+                           &bt BT_CLR     &trans         &trans         &trans         &trans  &trans  &trans  &trans  &trans    &trans
             >;
 
             label = "function";
