@@ -337,13 +337,13 @@
                 <&kp LCTRL>;
         };
 
-        alt_layer: layer_mod {
+        alt_fkey_layer: layer_mod {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
                 <&kp LALT &mo 6>,
-                <&macro_release>,
+                <&macro_pause_for_release>,
                 <&kp LEFT_ALT &mo 6>;
 
             label = "LAYER_MOD";
@@ -376,10 +376,10 @@
             label = "default";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
-&kp TAB    &kp Q  &kp W     &kp E       &kp R      &kp T                               &kp Y      &kp U  &kp I              &kp O    &kp P     &kp BACKSPACE
-&kp ESC    &kp A  &kp S     &kp D       &kp F      &kp G                               &kp H      &kp J  &kp K              &kp L    &kp SQT   &kp SEMI
-&kp LSHFT  &kp Z  &kp X     &kp C       &kp V      &kp B                 &to 5  &to 3  &kp N      &kp M  &kp COMMA          &kp DOT  &kp FSLH  &mt RSHFT ENTER
-                  &kp LGUI  &alt_layer  &kp LCTRL  &mt LEFT_SHIFT SPACE  &mo 1  &mo 3  &kp SPACE  &mo 2  &kp RIGHT_CONTROL  &mo 6
+&kp TAB    &kp Q  &kp W     &kp E            &kp R      &kp T                               &kp Y      &kp U  &kp I              &kp O    &kp P     &kp BACKSPACE
+&kp ESC    &kp A  &kp S     &kp D            &kp F      &kp G                               &kp H      &kp J  &kp K              &kp L    &kp SQT   &kp SEMI
+&kp LSHFT  &kp Z  &kp X     &kp C            &kp V      &kp B                 &to 5  &to 3  &kp N      &kp M  &kp COMMA          &kp DOT  &kp FSLH  &mt RSHFT ENTER
+                  &kp LGUI  &alt_fkey_layer  &kp LCTRL  &mt LEFT_SHIFT SPACE  &mo 1  &mo 3  &kp SPACE  &mo 2  &kp RIGHT_CONTROL  &mo 6
             >;
         };
 
