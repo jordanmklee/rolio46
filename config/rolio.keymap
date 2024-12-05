@@ -344,6 +344,7 @@
                 <&macro_press>,
                 <&kp LALT &mo 6>,
                 <&macro_pause_for_release>,
+                <&macro_release>,
                 <&kp LEFT_ALT &mo 6>;
 
             label = "LAYER_MOD";
