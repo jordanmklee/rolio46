@@ -340,7 +340,11 @@
         alt_layer: layer_mod {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LALT &mo 6>, <&macro_release>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT &mo 6>,
+                <&macro_release>,
+                <&kp LEFT_ALT &mo 6>;
 
             label = "LAYER_MOD";
         };
