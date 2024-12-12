@@ -405,10 +405,10 @@
             label = "default";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
-&kp TAB    &kp Q  &kp W     &kp E            &kp R                   &kp T                         &kp Y      &kp U                     &kp I              &kp O    &kp P     &kp BACKSPACE
-&kp ESC    &kp A  &kp S     &kp D            &hrm_left LEFT_SHIFT F  &kp G                         &kp H      &hrm_right RIGHT_SHIFT J  &kp K              &kp L    &kp SQT   &kp SEMI
-&kp LSHFT  &kp Z  &kp X     &kp C            &kp V                   &kp B           &to 5  &to 3  &kp N      &kp M                     &kp COMMA          &kp DOT  &kp FSLH  &mt RSHFT ENTER
-                  &kp LGUI  &alt_fkey_layer  &kp LCTRL               &sk LEFT_SHIFT  &mo 1  &mo 3  &kp SPACE  &mo 2                     &kp RIGHT_CONTROL  &mo 6
+&kp TAB    &kp Q                 &kp W                 &kp E                     &kp R                   &kp T                         &kp Y      &kp U                     &kp I                       &kp O                   &kp P                     &kp BACKSPACE
+&kp ESC    &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hrm_left LEFT_SHIFT F  &kp G                         &kp H      &hrm_right RIGHT_SHIFT J  &hrm_right RIGHT_CONTROL K  &hrm_right RIGHT_ALT L  &hrm_right RIGHT_GUI SQT  &kp SEMI
+&kp LSHFT  &kp Z                 &kp X                 &kp C                     &kp V                   &kp B           &to 5  &to 3  &kp N      &kp M                     &kp COMMA                   &kp DOT                 &kp FSLH                  &mt RSHFT ENTER
+                                 &kp LGUI              &alt_fkey_layer           &kp LCTRL               &sk LEFT_SHIFT  &mo 1  &mo 3  &kp SPACE  &mo 2                     &kp RIGHT_CONTROL           &mo 6
             >;
         };
 
