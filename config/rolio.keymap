@@ -104,6 +104,34 @@
             bindings = <&w_bsp_word>, <&kp>;
         };
 
+        hrm_right: hrm_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <38 39 40 41 42>;
+        };
+
+        hrm_left: hrm_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LEFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <43 44 45 46 47>;
+        };
+
         //Mac OS Zoom
         //Windows OS Zoom
     };
@@ -377,10 +405,10 @@
             label = "default";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
-&kp TAB    &kp Q  &kp W     &kp E            &kp R      &kp T                               &kp Y      &kp U  &kp I              &kp O    &kp P     &kp BACKSPACE
-&kp ESC    &kp A  &kp S     &kp D            &kp F      &kp G                               &kp H      &kp J  &kp K              &kp L    &kp SQT   &kp SEMI
-&kp LSHFT  &kp Z  &kp X     &kp C            &kp V      &kp B                 &to 5  &to 3  &kp N      &kp M  &kp COMMA          &kp DOT  &kp FSLH  &mt RSHFT ENTER
-                  &kp LGUI  &alt_fkey_layer  &kp LCTRL  &mt LEFT_SHIFT SPACE  &mo 1  &mo 3  &kp SPACE  &mo 2  &kp RIGHT_CONTROL  &mo 6
+&kp TAB    &kp Q  &kp W     &kp E            &kp R                   &kp T                         &kp Y      &kp U           &kp I              &kp O    &kp P     &kp BACKSPACE
+&kp ESC    &kp A  &kp S     &kp D            &hrm_left LEFT_SHIFT F  &kp G                         &kp H      &hrm_right J J  &kp K              &kp L    &kp SQT   &kp SEMI
+&kp LSHFT  &kp Z  &kp X     &kp C            &kp V                   &kp B           &to 5  &to 3  &kp N      &kp M           &kp COMMA          &kp DOT  &kp FSLH  &mt RSHFT ENTER
+                  &kp LGUI  &alt_fkey_layer  &kp LCTRL               &sk LEFT_SHIFT  &mo 1  &mo 3  &kp SPACE  &mo 2           &kp RIGHT_CONTROL  &mo 6
             >;
         };
 
